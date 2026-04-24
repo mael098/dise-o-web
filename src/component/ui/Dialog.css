@@ -1,0 +1,138 @@
+.open-dialog-btn {
+  position: fixed;
+  right: clamp(0.85rem, 2vw, 1.4rem);
+  bottom: clamp(0.85rem, 2vw, 1.4rem);
+  z-index: 15;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.8rem 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #1b1f1c;
+  cursor: pointer;
+  background: linear-gradient(120deg, #f5ddb3, #efbb8b, #f7e0bf);
+  background-size: 180% 180%;
+  box-shadow: 0 16px 35px rgba(23, 46, 37, 0.28);
+  animation: pulseShine 4s ease infinite;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.open-dialog-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(23, 46, 37, 0.35);
+}
+
+.pretty-dialog {
+  border: none;
+  background: transparent;
+  width: min(92vw, 580px);
+  max-height: 100dvh;
+  overflow: visible;
+  padding: 0;
+}
+
+.pretty-dialog::backdrop {
+  background:
+    radial-gradient(circle at 15% 25%, rgba(255, 231, 193, 0.3), transparent 40%),
+    radial-gradient(circle at 85% 10%, rgba(140, 82, 30, 0.2), transparent 30%),
+    rgba(17, 25, 21, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.dialog-card {
+  position: relative;
+  border-radius: 26px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  background:
+    linear-gradient(165deg, rgba(255, 252, 247, 0.96), rgba(247, 232, 210, 0.95)),
+    linear-gradient(35deg, rgba(255, 255, 255, 0.7), transparent);
+  border: 1px solid rgba(128, 81, 34, 0.22);
+  box-shadow:
+    0 26px 60px rgba(14, 29, 23, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.dialog-card h2 {
+  margin: 0 0 0.65rem;
+  color: #1d342b;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  line-height: 1.06;
+}
+
+.dialog-card p {
+  margin: 0;
+  color: #4b554f;
+  line-height: 1.55;
+}
+
+.dialog-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.72rem;
+  color: #8a5a2f;
+  font-weight: 700;
+}
+
+.dialog-eyebrow::before,
+.dialog-eyebrow::after {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.dialog-actions {
+  margin-top: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.dialog-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.68rem 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dialog-btn-primary {
+  color: #fff8ea;
+  background: linear-gradient(120deg, #204538, #2d6250);
+}
+
+.dialog-btn-ghost {
+  color: #1d342b;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(29, 52, 43, 0.2);
+}
+
+@keyframes pulseShine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 640px) {
+  .dialog-actions {
+    flex-direction: column;
+  }
+
+  .dialog-btn {
+    text-align: center;
+  }
+}
