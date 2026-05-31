@@ -6,7 +6,7 @@ export default function Nav() {
         <a className="brand-mark" href="#inicio">
           <span className="brand-monogram">D</span>
           <span>
-            <strong>D’FEER</strong>
+            <strong>"[nombre-del-negocio]"</strong>
             <small>Pastelería artesanal</small>
           </span>
         </a>

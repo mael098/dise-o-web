@@ -83,7 +83,7 @@ const menuItems: Item[] = [
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=1000&q=80',
+    src: 'src/assets/Chocolate Covered Strawberry Drip Cake.jpg',
     alt: 'Pastel artesanal con frutas frescas y crema.',
   },
   {
@@ -109,7 +109,7 @@ const galleryImages = [
 ]
 
 const WHATSAPP_URL =
-  'https://wa.me/528331234567?text=Hola%20D%E2%80%99PER%2C%20quiero%20hacer%20un%20pedido%20de%20pastel.'
+  'https://wa.me/528332664973?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20pastel.'
 
 const serviceHighlights = [
   'Recetas artesanales',
@@ -159,7 +159,7 @@ function App() {
         <div className="hero-grid">
           <div className="hero-content">
             <p className="eyebrow">Altamira, Tamaulipas</p>
-            <h1>D'FEER</h1>
+            <h1>"[nombre-del-negocio]"</h1>
             <p className="hero-tagline">Pasteles que saben a hogar</p>
             <p className="hero-description">
               Una pastelería con alma artesanal, estética elegante y sabores pensados para
