@@ -1,6 +1,6 @@
 
 export default function Nav() {
-    const WHATSAPP_URL ='https://wa.me/528331234567?text=Hola%20D%E2%80%99PER%2C%20quiero%20hacer%20un%20pedido%20de%20pastel.'
+    const WHATSAPP_URL ='https://wa.me/528332664973?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20pastel.'
   return (
     <header className="topbar">
         <a className="brand-mark" href="#inicio">

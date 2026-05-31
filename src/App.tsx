@@ -87,23 +87,23 @@ const galleryImages = [
     alt: 'Pastel artesanal con frutas frescas y crema.',
   },
   {
-    src: 'https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=1000&q=80',
+    src: 'src/assets/photo-1535141192574-5d4897c12636.jpg',
     alt: 'Rebanadas de pastel decoradas en vitrina elegante.',
   },
   {
-    src: 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=1000&q=80',
+    src: 'src/assets/photo-1519915028121-7d3463d20b13.jpg',
     alt: 'Mesa de cafeteria boutique con pastel y cafe.',
   },
   {
-    src: 'https://images.unsplash.com/photo-1559622214-f8a9850965bb?auto=format&fit=crop&w=1000&q=80',
+    src: 'src/assets/photo-1559622214-f8a9850965bb.jpg',
     alt: 'Pastel decorado con estilo premium en tonos crema.',
   },
   {
-    src: 'https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?auto=format&fit=crop&w=1000&q=80',
+    src: 'src/assets/photo-1525648199074-cee30ba79a4a.jpg',
     alt: 'Pasteleria artesanal con diferentes opciones de postres.',
   },
   {
-    src: 'https://images.unsplash.com/photo-1461009312844-e80697a81cc7?auto=format&fit=crop&w=1000&q=80',
+    src: 'src/assets/photo-1461009312844-e80697a81cc7.jpg',
     alt: 'Detalle de glaseado y decoracion de pastel.',
   },
 ]

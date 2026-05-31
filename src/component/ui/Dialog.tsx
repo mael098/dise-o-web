@@ -100,7 +100,7 @@ export default function Dialog() {
           </p>
           <div className="dialog-actions">
             <a
-              href="https://wa.me/528331234567?text=Hola%2C%20quiero%20aprovechar%20la%20promo%20del%2015%25"
+              href="https://wa.me/528332664973?text=Hola%2C%20quiero%20aprovechar%20la%20promo%20del%2015%25"
               target="_blank"
               rel="noreferrer"
               className="dialog-btn dialog-btn-primary"
