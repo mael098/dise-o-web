@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Nav from './component/Nav';
 import Dialog from './component/ui/Dialog'
@@ -130,6 +130,30 @@ const visitDetails = [
 ]
 
 function App() {
+  const [selectedProducts, setSelectedProducts] = useState<Set<string>>(new Set())
+
+  const toggleProduct = (productName: string) => {
+    const newSelected = new Set(selectedProducts)
+    if (newSelected.has(productName)) {
+      newSelected.delete(productName)
+    } else {
+      newSelected.add(productName)
+    }
+    setSelectedProducts(newSelected)
+  }
+
+  const getWhatsAppUrl = () => {
+    if (selectedProducts.size > 0) {
+      const selectedList = Array.from(selectedProducts).join(', ')
+      const message = `Hola, me interesa hacer un pedido de: ${selectedList}`
+      const encodedMessage = encodeURIComponent(message)
+      return `https://wa.me/528332664973?text=${encodedMessage}`
+    }
+    return 'https://wa.me/528332664973?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20pastel.'
+  }
+
+  const whatsappUrl = getWhatsAppUrl()
+
   useEffect(() => {
     // Detecta elementos al entrar en viewport para animar secciones en scroll.
     const observer = new IntersectionObserver(
@@ -166,7 +190,7 @@ function App() {
               acompañar momentos especiales con calidez.
             </p>
             <div className="hero-actions">
-              <a className="btn btn-primary" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+              <a className="btn btn-primary" href={whatsappUrl} target="_blank" rel="noreferrer">
                 Pedir por WhatsApp
               </a>
               <a className="btn btn-secondary-light" href="#menu">
@@ -223,7 +247,7 @@ function App() {
       <section className="section reveal" id="menu">
         <div className="section-header">
           <p className="eyebrow">Carta completa</p>
-          <h2>Menú D'PER</h2>
+          <h2>Menú [nombre-del-negocio]</h2>
           <p className="section-copy">
             Pasteles, cajas dulces y opciones personalizadas con una presentación limpia y
             premium accesible.
@@ -232,8 +256,15 @@ function App() {
         <div className="menu-layout">
           <div className="menu-list">
             {menuItems.map((item) => (
-              <article key={item.name} className="menu-item">
-                <div>
+              <article key={item.name} className="menu-item" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <input
+                  type="checkbox"
+                  id={item.name}
+                  checked={selectedProducts.has(item.name)}
+                  onChange={() => toggleProduct(item.name)}
+                  style={{ cursor: 'pointer', width: '18px', height: '18px' }}
+                />
+                <div style={{ flex: 1 }}>
                   <h3>{item.name}</h3>
                   <p>{item.description}</p>
                 </div>
@@ -248,7 +279,7 @@ function App() {
               Diseñamos pasteles para cumpleaños, aniversarios, regalos y eventos con acabados
               cuidados y sabores clásicos que siempre funcionan.
             </p>
-            <a className="btn btn-outline" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+            <a className="btn btn-outline" href={whatsappUrl} target="_blank" rel="noreferrer">
               Cotizar pedido
             </a>
           </aside>
@@ -307,7 +338,7 @@ function App() {
           Escríbenos por WhatsApp y aparta tu pedido personalizado para cumpleaños,
           aniversarios o cualquier momento especial.
         </p>
-        <a className="btn btn-secondary" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+        <a className="btn btn-secondary" href={whatsappUrl} target="_blank" rel="noreferrer">
           Enviar mensaje ahora
         </a>
       </section>
