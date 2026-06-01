@@ -15,123 +15,126 @@ type Feature = {
   tag: string
 }
 
+// 🍕 Especialidades destacadas de la pizzería
 const featuredCakes: Feature[] = [
   {
-    name: 'Tres Leches Clásico',
-    note: 'Suave, fresco y con crema batida ligera.',
-    tag: 'El más pedido',
+    name: 'Margarita Especial',
+    note: 'Salsa de tomate artesanal, mozzarella fresco, albahaca y aceite de oliva.',
+    tag: 'La Clásica',
   },
   {
-    name: 'Chocolate Intenso',
-    note: 'Cacao premium y ganache sedosa.',
+    name: 'Pepperoni Supremo',
+    note: 'Doble porción de pepperoni premium con un toque de especias secretas.',
+    tag: 'La Más Vendida',
+  },
+  {
+    name: '4 Quesos Gourmet',
+    note: 'Mezcla perfecta de mozzarella, provolone, queso azul y parmesano.',
     tag: 'Premium',
   },
   {
-    name: 'Girasol Vainilla',
-    note: 'Decoración artesanal con flores de buttercream.',
-    tag: 'Firma D’PER',
-  },
-  {
-    name: 'Limón de la Casa',
-    note: 'Cítrico equilibrado con toque cremoso.',
-    tag: 'Fresco',
+    name: 'Mexicana de la Casa',
+    note: 'Chorizo, carne molida, jalapeños, cebolla y un toque de cilantro fresco.',
+    tag: 'Especialidad',
   },
 ]
 
+// 📋 Menú completo con precios reales en MXN
 const menuItems: Item[] = [
   {
-    name: 'Pastel Tres Leches',
-    description: 'Bizcocho esponjoso bañado en tres leches y crema fresca.',
-    price: '$480',
+    name: 'Pizza Pepperoni',
+    description: 'Queso mozzarella fundido y rebanadas crujientes de pepperoni.',
+    price: '$180',
   },
   {
-    name: 'Pastel Chocolate Belga',
-    description: 'Capas húmedas de chocolate oscuro con relleno de ganache.',
-    price: '$520',
+    name: 'Pizza Hawaiana',
+    description: 'La combinación perfecta de jamón seleccionado y piña dulce.',
+    price: '$190',
   },
   {
-    name: 'Pastel de Limón',
-    description: 'Mousse cítrica, cobertura brillante y base suave de vainilla.',
-    price: '$470',
+    name: 'Pizza Carnes Frías',
+    description: 'Salami, jamón, pepperoni y tocino ahumado sobre salsa de la casa.',
+    price: '$230',
   },
   {
-    name: 'Pastel Red Velvet',
-    description: 'Textura aterciopelada con crema de queso ligeramente dulce.',
-    price: '$510',
+    name: 'Pizza Vegetariana',
+    description: 'Pimientos, champiñones frescos, cebolla morada y aceitunas negras.',
+    price: '$195',
   },
   {
-    name: 'Cheesecake Artesanal',
-    description: 'Horneado lento con coulis de frutos rojos.',
-    price: '$450',
+    name: 'Pizza BBQ Chicken',
+    description: 'Pollo deshebrado, cebolla caramelizada y nuestra salsa BBQ especial.',
+    price: '$220',
   },
   {
-    name: 'Caja Mini Reposteria (12 pzas)',
-    description: 'Selección de mini tartaletas, brownies y roles.',
-    price: '$390',
+    name: 'Paquete Amigos (2 Pizzas)',
+    description: '2 pizzas grandes de hasta 2 ingredientes cada una.',
+    price: '$340',
   },
   {
-    name: 'Cupcakes Boutique (6 pzas)',
-    description: 'Decoración premium ideal para regalo y eventos pequeños.',
-    price: '$240',
+    name: 'Papas Gajo Sazonadas',
+    description: 'Porción crujiente acompañada de aderezo de la casa.',
+    price: '$85',
   },
   {
-    name: 'Pastel Personalizado',
-    description: 'Diseño y sabor a elección para celebraciones especiales.',
-    price: 'Desde $650',
+    name: 'Pizza Personalizada',
+    description: 'Elige tu base y combina hasta 4 ingredientes a tu gusto.',
+    price: 'Desde $160',
   },
 ]
 
+// 📸 Fotos de optimizadas desde el CDN de Unsplash para que carguen de volada con temática de pizzería
 const galleryImages = [
   {
-    src: 'src/assets/Chocolate Covered Strawberry Drip Cake.jpg',
-    alt: 'Pastel artesanal con frutas frescas y crema.',
+    src: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600&auto=format&fit=crop',
+    alt: 'Pizza saliendo del horno con queso derretido.',
   },
   {
-    src: 'src/assets/photo-1535141192574-5d4897c12636.jpg',
-    alt: 'Rebanadas de pastel decoradas en vitrina elegante.',
+    src: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=600&auto=format&fit=crop',
+    alt: 'Corte de rebanada de pizza de pepperoni.',
   },
   {
-    src: 'src/assets/photo-1519915028121-7d3463d20b13.jpg',
-    alt: 'Mesa de cafeteria boutique con pastel y cafe.',
+    src: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?q=80&w=600&auto=format&fit=crop',
+    alt: 'Mesa con pizzas artesanales listas para compartir.',
   },
   {
-    src: 'src/assets/photo-1559622214-f8a9850965bb.jpg',
-    alt: 'Pastel decorado con estilo premium en tonos crema.',
+    src: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=600&auto=format&fit=crop',
+    alt: 'Detalle de ingredientes frescos sobre la masa.',
   },
   {
-    src: 'src/assets/photo-1525648199074-cee30ba79a4a.jpg',
-    alt: 'Pasteleria artesanal con diferentes opciones de postres.',
+    src: 'https://images.unsplash.com/photo-1544982503-9f984c14501a?q=80&w=600&auto=format&fit=crop',
+    alt: 'Preparación artesanal de la masa de pizza.',
   },
   {
-    src: 'src/assets/photo-1461009312844-e80697a81cc7.jpg',
-    alt: 'Detalle de glaseado y decoracion de pastel.',
+    src: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=600&auto=format&fit=crop',
+    alt: 'Pizza gourmet con albahaca fresca.',
   },
 ]
 
+// 📲 URL de WhatsApp actualizada con texto enfocado a Pizzas
 const WHATSAPP_URL =
-  'https://wa.me/528332664973?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20pastel.'
+  'https://wa.me/528332664973?text=Hola%2C%20vi%20el%20men%C3%BA%20digital%20y%20quiero%20ordenar%20una%20pizza.'
 
 const serviceHighlights = [
-  'Recetas artesanales',
-  'Decoración personalizada',
-  'Pedidos para eventos',
+  'Masa artesanal',
+  'Ingredientes frescos',
+  'Pedidos rápidos',
 ]
 
 const quickFacts = [
-  { value: '+80', label: 'Pedidos especiales por mes' },
-  { value: '100%', label: 'Hecho con dedicación artesanal' },
-  { value: 'Altamira', label: 'Atención local y cercana' },
+  { value: '100%', label: 'Queso Mozzarella Real' },
+  { value: 'Horno', label: 'Sabor tradicional' },
+  { value: 'Altamira', label: 'Servicio local y a domicilio' },
 ]
 
 const visitDetails = [
-  'Atención personalizada para pedidos y cotizaciones.',
-  'Opciones para cumpleaños, mesas dulces y regalos.',
-  'Entregas coordinadas dentro de Altamira y alrededores.',
+  'Pedidos listos para recoger en sucursal en 20 minutos.',
+  'Servicio a domicilio rápido en la zona de Altamira.',
+  'Promociones especiales todos los martes y jueves.',
 ]
 
 function App() {
   useEffect(() => {
-    // Detecta elementos al entrar en viewport para animar secciones en scroll.
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -159,15 +162,16 @@ function App() {
         <div className="hero-grid">
           <div className="hero-content">
             <p className="eyebrow">Altamira, Tamaulipas</p>
-            <h1>"[nombre-del-negocio]"</h1>
-            <p className="hero-tagline">Pasteles que saben a hogar</p>
+            {/* Aquí cambias rápido el nombre por el de la pizzería real al venderla */}
+            <h1>"[Nombre de la Pizzería]"</h1>
+            <p className="hero-tagline">Sabor artesanal en cada rebanada</p>
             <p className="hero-description">
-              Una pastelería con alma artesanal, estética elegante y sabores pensados para
-              acompañar momentos especiales con calidez.
+              Pizzas hechas al momento con masa estirada a mano, salsa secreta de la casa e 
+              ingredientes de la más alta calidad para compartir con la familia.
             </p>
             <div className="hero-actions">
               <a className="btn btn-primary" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-                Pedir por WhatsApp
+                Ordenar por WhatsApp
               </a>
               <a className="btn btn-secondary-light" href="#menu">
                 Ver menú completo
@@ -181,11 +185,11 @@ function App() {
           </div>
 
           <aside className="hero-panel reveal is-visible">
-            <p className="eyebrow">Experiencia boutique</p>
-            <h2>Diseños cuidados, sabor memorable</h2>
+            <p className="eyebrow">Calidad que se nota</p>
+            <h2>Masa crujiente, queso derretido</h2>
             <p>
-              Desde pasteles clásicos hasta pedidos personalizados, cada creación busca verse
-              refinada y sentirse cercana.
+              Desde las combinaciones tradicionales que ya conoces hasta nuestras recetas 
+              especiales creadas para sorprender a tu paladar.
             </p>
             <div className="hero-facts">
               {quickFacts.map((fact) => (
@@ -201,11 +205,11 @@ function App() {
 
       <section className="section reveal" id="destacados">
         <div className="section-header">
-          <p className="eyebrow">Favoritos de la casa</p>
-          <h2>Productos destacados</h2>
+          <p className="eyebrow">Las favoritas de todos</p>
+          <h2>Especialidades destacadas</h2>
           <p className="section-copy">
-            Sabores con presencia visual y balance casero: pensados para regalar, celebrar o
-            simplemente consentirte.
+            Las combinaciones más queridas por nuestros clientes. Preparadas al momento y 
+            servidas bien calientes.
           </p>
         </div>
         <div className="featured-grid">
@@ -222,11 +226,10 @@ function App() {
 
       <section className="section reveal" id="menu">
         <div className="section-header">
-          <p className="eyebrow">Carta completa</p>
-          <h2>Menú D'PER</h2>
+          <p className="eyebrow">Nuestro Menú</p>
+          <h2>Menú Digital</h2>
           <p className="section-copy">
-            Pasteles, cajas dulces y opciones personalizadas con una presentación limpia y
-            premium accesible.
+            Elige tu pizza favorita o complementa tu orden con nuestros snacks. ¡Todo directo a tu mesa o domicilio!
           </p>
         </div>
         <div className="menu-layout">
@@ -242,11 +245,11 @@ function App() {
             ))}
           </div>
           <aside className="menu-note">
-            <p className="eyebrow">Pedidos a medida</p>
-            <h3>Hazlo personal</h3>
+            <p className="eyebrow">¿Tienes un evento?</p>
+            <h3>Pedidos grandes</h3>
             <p>
-              Diseñamos pasteles para cumpleaños, aniversarios, regalos y eventos con acabados
-              cuidados y sabores clásicos que siempre funcionan.
+              Hacemos paquetes especiales para fiestas, reuniones o cumpleaños. Contáctanos con 
+              anticipación y nos encargamos de la cena.
             </p>
             <a className="btn btn-outline" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
               Cotizar pedido
@@ -257,11 +260,10 @@ function App() {
 
       <section className="section reveal" id="galeria">
         <div className="section-header">
-          <p className="eyebrow">Inspiración dulce</p>
+          <p className="eyebrow">Amor al primer mordisco</p>
           <h2>Galería</h2>
           <p className="section-copy">
-            Una selección visual que mezcla acabados delicados, atmósfera acogedora y una
-            identidad pensada para antojar desde el primer vistazo.
+            Un vistazo a nuestra cocina y la dedicación que le ponemos a cada pizza que preparamos para ti.
           </p>
         </div>
         <div className="gallery-grid modern-gallery">
@@ -269,8 +271,8 @@ function App() {
             <figure key={image.src} className="gallery-card">
               <img src={image.src} alt={image.alt} loading="lazy" />
               <figcaption>
-                <span>Escena {index + 1}</span>
-                <strong>D’PER Signature Mood</strong>
+                <span>Imagen {index + 1}</span>
+                <strong>Pizza Tradición Gourmet</strong>
               </figcaption>
             </figure>
           ))}
@@ -279,13 +281,12 @@ function App() {
 
       <section className="section reveal location" id="ubicacion">
         <div className="location-copy">
-          <p className="eyebrow">Visítanos</p>
+          <p className="eyebrow">Pide o Visítanos</p>
           <h2>Ubicación</h2>
           <p>
-            Estamos en Altamira, Tamaulipas. Te esperamos para probar nuestros pasteles
-            artesanales recién hechos.
+            Estamos ubicados en el corazón de Altamira, Tamaulipas. Listos para atenderte en sucursal o llevar el sabor a tu casa.
           </p>
-          <p className="address">D'PER Pastelería · Zona Centro, Altamira, Tamaulipas</p>
+          <p className="address">Pizzería Artesanal · Zona Centro, Altamira, Tamaulipas</p>
           <div className="visit-list">
             {visitDetails.map((detail) => (
               <p key={detail}>{detail}</p>
@@ -293,7 +294,7 @@ function App() {
           </div>
         </div>
         <iframe
-          title="Mapa de D'PER en Altamira, Tamaulipas"
+          title="Mapa de la Pizzería en Altamira, Tamaulipas"
           src="https://www.google.com/maps?q=Altamira%2C%20Tamaulipas&output=embed"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -301,14 +302,13 @@ function App() {
       </section>
 
       <section className="section cta reveal" id="pedido">
-        <p className="eyebrow">Haz tu pedido hoy</p>
-        <h2>Tu próximo pastel favorito te está esperando</h2>
+        <p className="eyebrow">¿Con hambre?</p>
+        <h2>Tu pizza favorita está a un clic de distancia</h2>
         <p>
-          Escríbenos por WhatsApp y aparta tu pedido personalizado para cumpleaños,
-          aniversarios o cualquier momento especial.
+          Dale clic al botón de abajo, dinos qué especialidad se te antoja y te la preparamos de inmediato. ¡Hacemos envíos rápidos!
         </p>
         <a className="btn btn-secondary" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-          Enviar mensaje ahora
+          Ordenar por WhatsApp Ahora
         </a>
       </section>
     </main>
