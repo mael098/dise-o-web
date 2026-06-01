@@ -83,7 +83,7 @@ const menuItems: Item[] = [
 
 const galleryImages = [
   {
-    src: 'src/assets/Chocolate Covered Strawberry Drip Cake.jpg',
+    src: 'https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=1000&q=80',
     alt: 'Pastel artesanal con frutas frescas y crema.',
   },
   {
