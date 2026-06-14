@@ -1,93 +1,96 @@
 .open-dialog-btn {
   position: fixed;
-  right: clamp(0.85rem, 2vw, 1.4rem);
+  left: clamp(0.85rem, 2vw, 1.4rem);
   bottom: clamp(0.85rem, 2vw, 1.4rem);
-  z-index: 15;
+  z-index: 40;
   border: 0;
   border-radius: 999px;
-  padding: 0.8rem 1.1rem;
+  padding: 0.8rem 1.15rem;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
+  font-size: 0.85rem;
   letter-spacing: 0.02em;
-  color: #1b1f1c;
+  color: #2a2420;
   cursor: pointer;
-  background: linear-gradient(120deg, #f5ddb3, #efbb8b, #f7e0bf);
+  background: linear-gradient(120deg, #f3ddd8, #e3bdb5, #d8b06a);
   background-size: 180% 180%;
-  box-shadow: 0 16px 35px rgba(23, 46, 37, 0.28);
-  animation: pulseShine 4s ease infinite;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 16px 35px -12px rgba(92, 68, 51, 0.5);
+  animation: pulseShine 5s ease infinite;
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .open-dialog-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(23, 46, 37, 0.35);
+  box-shadow: 0 20px 42px -12px rgba(92, 68, 51, 0.6);
 }
 
 .pretty-dialog {
   border: none;
   background: transparent;
-  width: min(92vw, 580px);
+  width: min(92vw, 560px);
   max-height: 100dvh;
   overflow: visible;
   padding: 0;
+  margin: auto;
 }
 
 .pretty-dialog::backdrop {
   background:
-    radial-gradient(circle at 15% 25%, rgba(255, 231, 193, 0.3), transparent 40%),
-    radial-gradient(circle at 85% 10%, rgba(140, 82, 30, 0.2), transparent 30%),
-    rgba(17, 25, 21, 0.72);
-  backdrop-filter: blur(4px);
+    radial-gradient(circle at 15% 25%, rgba(227, 189, 181, 0.32), transparent 42%),
+    radial-gradient(circle at 85% 10%, rgba(200, 163, 91, 0.24), transparent 34%),
+    rgba(42, 36, 32, 0.7);
+  backdrop-filter: blur(5px);
 }
 
 .dialog-card {
   position: relative;
-  border-radius: 26px;
-  padding: clamp(1.2rem, 3vw, 2rem);
+  border-radius: 28px;
+  padding: clamp(1.4rem, 3.5vw, 2.4rem);
   background:
-    linear-gradient(165deg, rgba(255, 252, 247, 0.96), rgba(247, 232, 210, 0.95)),
-    linear-gradient(35deg, rgba(255, 255, 255, 0.7), transparent);
-  border: 1px solid rgba(128, 81, 34, 0.22);
+    linear-gradient(165deg, #fffdf8, #f7f1e8);
+  border: 1px solid rgba(200, 163, 91, 0.3);
   box-shadow:
-    0 26px 60px rgba(14, 29, 23, 0.34),
+    0 30px 70px -24px rgba(42, 36, 32, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .dialog-card h2 {
   margin: 0 0 0.65rem;
-  color: #1d342b;
-  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
-  line-height: 1.06;
+  color: #5c4433;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  line-height: 1.04;
 }
 
 .dialog-card p {
   margin: 0;
-  color: #4b554f;
-  line-height: 1.55;
+  color: #8a7d70;
+  line-height: 1.6;
 }
 
 .dialog-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.95rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.72rem;
-  color: #8a5a2f;
+  letter-spacing: 0.16em;
+  font-size: 0.7rem;
+  color: #c8a35b;
   font-weight: 700;
 }
 
-.dialog-eyebrow::before,
-.dialog-eyebrow::after {
+.dialog-eyebrow::before {
   content: '';
-  width: 20px;
+  width: 22px;
   height: 1px;
   background: currentColor;
   opacity: 0.7;
 }
 
 .dialog-actions {
-  margin-top: 1.3rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
@@ -96,32 +99,37 @@
 .dialog-btn {
   border: 0;
   border-radius: 999px;
-  padding: 0.68rem 1rem;
+  padding: 0.78rem 1.3rem;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
+  font-size: 0.9rem;
   text-decoration: none;
   cursor: pointer;
+  transition: transform 200ms ease;
+}
+
+.dialog-btn:hover {
+  transform: translateY(-2px);
 }
 
 .dialog-btn-primary {
-  color: #fff8ea;
-  background: linear-gradient(120deg, #204538, #2d6250);
+  color: #fff7ee;
+  background: #5c4433;
 }
 
 .dialog-btn-ghost {
-  color: #1d342b;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(29, 52, 43, 0.2);
+  color: #5c4433;
+  background: transparent;
+  border: 1px solid rgba(92, 68, 51, 0.25);
 }
 
 @keyframes pulseShine {
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
@@ -131,7 +139,6 @@
   .dialog-actions {
     flex-direction: column;
   }
-
   .dialog-btn {
     text-align: center;
   }

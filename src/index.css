@@ -1,42 +1,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', ui-serif, Georgia, serif;
+
+  /* Warm luxury palette — cream / ivory base, chocolate + gold + rose accents */
+  --color-background: #f7f1e8;
+  --color-foreground: #2a2420;
+
+  --color-card: #fffdf8;
+  --color-card-foreground: #2a2420;
+
+  --color-cream: #f7f1e8;
+  --color-ivory: #fffdf8;
+  --color-sand: #efe5d6;
+
+  --color-primary: #5c4433;
+  --color-primary-foreground: #fff7ee;
+
+  --color-accent: #c8a35b;
+  --color-accent-foreground: #2a2420;
+
+  --color-rose: #e3bdb5;
+  --color-rose-soft: #f3ddd8;
+
+  --color-muted: #8a7d70;
+  --color-border: rgba(92, 68, 51, 0.14);
+
+  --radius: 1.5rem;
+}
 
 * {
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
-  margin: 0;
-  min-height: 100%;
-}
-
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 7rem;
+  scroll-padding-top: 6rem;
+  background-color: var(--color-background);
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
-  background:
-    radial-gradient(circle at 15% 10%, rgba(221, 192, 130, 0.35), transparent 32%),
-    radial-gradient(circle at 95% 90%, rgba(30, 70, 57, 0.2), transparent 28%),
-    #f2eadf;
-  color: #213229;
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100%;
 }
 
 h1,
 h2,
-h3 {
-  font-family: 'Cormorant Garamond', serif;
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
 }
 
-p {
-  line-height: 1.6;
+/* Subtle ambient grain / warmth helpers */
+.bg-grain {
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(200, 163, 91, 0.16), transparent 36%),
+    radial-gradient(circle at 92% 12%, rgba(227, 189, 181, 0.18), transparent 34%),
+    radial-gradient(circle at 50% 100%, rgba(92, 68, 51, 0.08), transparent 45%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Marquee for the trust / highlights strip */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-primary-foreground);
 }
