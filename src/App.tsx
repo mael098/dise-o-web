@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Nav from './component/Nav';
 import Dialog from './component/ui/Dialog'
+import { cakes } from './data/cakes';
 
 type Item = {
   name: string
