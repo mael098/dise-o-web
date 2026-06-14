@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { cakes } from '../data/cakes'
-// import { resolveImage } from '../lib/images'
 import { fadeUp, staggerFast } from '../lib/motion'
 import { SectionHeading } from './ui/Primitives'
 import { CheckIcon } from './icons'
+import { resolveImage } from '../lib/images';
 
 type CatalogProps = {
   selectedProducts: Set<string>
@@ -40,15 +40,14 @@ export default function Catalog({ selectedProducts, toggleProduct }: CatalogProp
                   type="button"
                   onClick={() => toggleProduct(cake.name)}
                   aria-pressed={selected}
-                  className={`group relative flex h-full w-full flex-col overflow-hidden rounded-3xl border bg-card text-left transition-all duration-400 ${
-                    selected
+                  className={`group relative flex h-full w-full flex-col overflow-hidden rounded-3xl border bg-card text-left transition-all duration-400 ${selected
                       ? 'border-accent shadow-[0_24px_50px_-22px_rgba(200,163,91,0.7)] -translate-y-1'
                       : 'border-border hover:-translate-y-1.5 hover:shadow-[0_28px_55px_-26px_rgba(92,68,51,0.45)]'
-                  }`}
+                    }`}
                 >
                   <div className="relative aspect-square overflow-hidden">
                     <img
-                      src={cake.image || '/placeholder.svg'}
+                      src={resolveImage(cake.image) || '/placeholder.svg'}
                       alt={cake.name}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
@@ -60,11 +59,10 @@ export default function Catalog({ selectedProducts, toggleProduct }: CatalogProp
                       </span>
                     ) : null}
                     <span
-                      className={`absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border-2 transition-all duration-300 ${
-                        selected
+                      className={`absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border-2 transition-all duration-300 ${selected
                           ? 'border-accent bg-accent text-primary-foreground'
                           : 'border-ivory/80 bg-ivory/30 text-transparent backdrop-blur'
-                      }`}
+                        }`}
                     >
                       <CheckIcon className="h-4 w-4" />
                     </span>
@@ -80,9 +78,8 @@ export default function Catalog({ selectedProducts, toggleProduct }: CatalogProp
                     <div className="mt-4 flex items-center justify-between">
                       <span className="font-serif text-2xl text-primary">{cake.price}</span>
                       <span
-                        className={`text-xs font-semibold uppercase tracking-wide transition-colors ${
-                          selected ? 'text-accent' : 'text-muted'
-                        }`}
+                        className={`text-xs font-semibold uppercase tracking-wide transition-colors ${selected ? 'text-accent' : 'text-muted'
+                          }`}
                       >
                         {selected ? 'Agregado' : 'Agregar +'}
                       </span>
