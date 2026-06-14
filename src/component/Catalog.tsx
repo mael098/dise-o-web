@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { cakes } from '../data/cakes'
-import { resolveImage } from '../lib/images'
+// import { resolveImage } from '../lib/images'
 import { fadeUp, staggerFast } from '../lib/motion'
 import { SectionHeading } from './ui/Primitives'
 import { CheckIcon } from './icons'
@@ -48,12 +48,12 @@ export default function Catalog({ selectedProducts, toggleProduct }: CatalogProp
                 >
                   <div className="relative aspect-square overflow-hidden">
                     <img
-                      src={resolveImage(cake.image) || '/placeholder.svg'}
+                      src={cake.image || '/placeholder.svg'}
                       alt={cake.name}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/35 via-transparent to-transparent opacity-70" />
+                    <div className="absolute inset-0 bg-linear-to-t from-primary/35 via-transparent to-transparent opacity-70" />
                     {cake.tag ? (
                       <span className="absolute left-3 top-3 rounded-full bg-ivory/90 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-primary backdrop-blur">
                         {cake.tag}
