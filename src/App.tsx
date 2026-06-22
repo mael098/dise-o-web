@@ -155,7 +155,7 @@ function App() {
   return (
     <main className="page-shell">
      <Nav/>
-     <Dialog />
+     {/* <Dialog /> */}
 
       <section className="hero" id="inicio">
         <div className="hero-overlay" />
