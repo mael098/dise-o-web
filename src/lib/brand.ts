@@ -1,5 +1,5 @@
 export const BRAND = {
-  name: 'D’PER',
+  name: 'D’Fer',
   tagline: 'Pastelería artesanal',
   location: 'Altamira, Tamaulipas',
   whatsappNumber: '528332664973',
