@@ -45,7 +45,7 @@ export default function Nav() {
             className="h-10 w-10 rounded-full object-cover ring-1 ring-accent/40"
           />
           <span className="leading-tight">
-            <strong className="block font-serif text-xl tracking-[0.14em] text-primary">
+            <strong className="block font-serif text-xl uppercase tracking-[0.14em] text-primary">
               {BRAND.name}
             </strong>
             <small className="block text-[0.62rem] uppercase tracking-[0.24em] text-muted">
