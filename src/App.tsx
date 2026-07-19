@@ -63,7 +63,7 @@ function App() {
       whatsappUrl={whatsappUrl}
       onClear={clearProducts}
       />
-      <Dialog/>
+      {/* <Dialog/> */}
     </>
   )
 }
