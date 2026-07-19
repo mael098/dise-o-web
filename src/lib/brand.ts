@@ -1,8 +1,8 @@
 export const BRAND = {
-  name: 'D’Fer',
+  name: 'D’FER',
   tagline: 'Pastelería artesanal',
   location: 'Altamira, Tamaulipas',
-  whatsappNumber: '52 1 81 4635 6315',
+  whatsappNumber: '5218146356315',
 }
 
 export function buildWhatsAppUrl(message: string): string {
