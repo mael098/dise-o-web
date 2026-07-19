@@ -14,7 +14,7 @@ import Location from './component/Location';
 import FinalCTA from './component/FinalCTA';
 import Footer from './component/Footer';
 import OrderBar from './component/OrderBar';
-import Dialog from './component/ui/Dialog';
+// import Dialog from './component/ui/Dialog';
 
 function App() {
    const [selectedProducts, setSelectedProducts] = useState<Set<string>>(new Set())
