@@ -95,7 +95,7 @@ export default function Footer() {
                   rel="noreferrer"
                   className="transition-colors hover:text-primary"
                 >
-                  +52 833 266 4973
+                  +52 181 4635 6315
                 </a>
               </li>
             </ul>
