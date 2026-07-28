@@ -5,7 +5,7 @@ import { buildWhatsAppUrl } from '../lib/brand'
 import { SectionHeading, Button } from './ui/Primitives'
 import { ArrowRight } from './icons'
 
-const featured = cakes.slice(0, 3)
+const featured = cakes.slice(0, 4)
 const ease = [0.22, 1, 0.36, 1] as const
 
 export default function Showcase() {
