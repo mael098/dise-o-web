@@ -1,11 +1,5 @@
-export type Cake = {
-  id: number
-  name: string
-  descripcion: string
-  price: string
-  image: string
-  tag?: string
-}
+import type { Cake } from './../types/types';
+
 export const cakes: Cake[] = [
   {
     id: 1,
@@ -31,7 +25,7 @@ export const cakes: Cake[] = [
     descripcion:
       'El infaltable y jugoso pastel tres leches en tamaño perfecto.',
     price: '$310',
-    image: '',
+    image: '3 leches tradicional mediano.webp',
     tag: 'Clásico',
   },
   {
@@ -40,7 +34,7 @@ export const cakes: Cake[] = [
     descripcion:
       'Exquisito y abundante pastel tres leches para compartir en familia.',
     price: '$595',
-    image: '',
+    image: '3 leches tradicional.webp',
     tag: 'Familiar',
   },
   {
@@ -148,7 +142,7 @@ export const cakes: Cake[] = [
     descripcion:
       'El consentido de siempre, suave pan bañado en rico chocolate.',
     price: '$290',
-    image: '',
+    image: 'chocolate.webp',
     tag: 'Clásico',
   },
   {
@@ -157,7 +151,7 @@ export const cakes: Cake[] = [
     descripcion:
       'Intenso y suave pastel con el reconfortante aroma a café capuchino.',
     price: '$320',
-    image: '',
+    image: 'Capuchino.webp',
     tag: 'Especial',
   },
   {
@@ -166,7 +160,7 @@ export const cakes: Cake[] = [
     descripcion:
       'Elegante pastel fino cubierto de crujientes almendras tostadas, nuez y coco.',
     price: '$595',
-    image: '',
+    image: 'Almendras.webp',
     tag: 'Premium',
   },
   {
@@ -175,7 +169,7 @@ export const cakes: Cake[] = [
     descripcion:
       'La combinación perfecta entre suave flan napolitano y rico pastel de chocolate.',
     price: '$300',
-    image: '',
+    image: 'Chocoflan.webp',
     tag: 'Especial',
   },
   {
@@ -184,7 +178,7 @@ export const cakes: Cake[] = [
     descripcion:
       'Tradicional pastel de zanahoria especiado con su suave cobertura cremosa.',
     price: '$350',
-    image: '',
+    image: 'Zanahoria.webp',
     tag: 'Especial',
   },
   {
@@ -193,7 +187,7 @@ export const cakes: Cake[] = [
     descripcion:
       'Deliciosa opción ligera y saludable sin descuidar el buen sabor.',
     price: '$295',
-    image: '',
+    image: 'Sin azúcar.webp',
     tag: 'Especial',
   },
   {
@@ -202,7 +196,7 @@ export const cakes: Cake[] = [
     descripcion:
       'Sencillo, suave y reconfortante pastel de pura vainilla.',
     price: '$290',
-    image: '',
+    image: 'Vainilla.webp',
     tag: 'Clásico',
   },
   {
@@ -211,7 +205,7 @@ export const cakes: Cake[] = [
     descripcion:
       'Pastel irresistible de pan casero húmedo en tres leches.',
     price: '$320',
-    image: '',
+    image: 'Gitano.webp',
     tag: 'Temporada',
   },
   {
@@ -264,7 +258,7 @@ export const cakes: Cake[] = [
     name: 'Doble Chocolate',
     descripcion:
       'La máxima tentación intensa para verdaderos amantes del chocolate.',
-    price: '',
+    price: '$350',
     image: 'Doble chocolate.webp',
     tag: 'Premium',
   },

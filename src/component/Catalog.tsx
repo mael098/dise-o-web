@@ -4,11 +4,9 @@ import { fadeUp, staggerFast } from '../lib/motion'
 import { SectionHeading } from './ui/Primitives'
 import { CheckIcon } from './icons'
 import { resolveImage } from '../lib/images';
+import type { CatalogProps } from '../types/types';
 
-type CatalogProps = {
-  selectedProducts: Set<string>
-  toggleProduct: (name: string) => void
-}
+
 
 export default function Catalog({ selectedProducts, toggleProduct }: CatalogProps) {
   return (

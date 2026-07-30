@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { fadeUp } from '../lib/motion'
 import { SectionHeading } from './ui/Primitives'
 import { MapPinIcon, ClockIcon, CheckIcon } from './icons'
+import type { Branches } from '../types/types';
 
 const points = [
   'Atención personalizada para pedidos y cotizaciones.',
@@ -9,7 +10,7 @@ const points = [
   'Entregas coordinadas dentro de la región.',
 ]
 
-const branches = [
+const branches:Branches[] = [
   {
     name: 'Sucursal Altamira',
     lat: 22.397739815867087,
