@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { logo } from '../lib/images'
 import { BRAND, buildWhatsAppUrl, DEFAULT_WA_MESSAGE } from '../lib/brand'
+import { useBranch } from '../lib/branch-context'
 import { WhatsAppIcon } from './icons'
+import BranchSelector from './BranchSelector'
 
 const links = [
   { href: '#destacados', label: 'Destacados' },
@@ -15,7 +17,8 @@ const links = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const waUrl = buildWhatsAppUrl(DEFAULT_WA_MESSAGE)
+  const { branch } = useBranch()
+  const waUrl = buildWhatsAppUrl(branch.whatsapp ?? '', DEFAULT_WA_MESSAGE)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -68,6 +71,7 @@ export default function Nav() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <BranchSelector />
           <a
             href={waUrl}
             target="_blank"

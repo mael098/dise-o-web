@@ -16,5 +16,10 @@ export type CatalogProps = {
 export type Branches  = {
   name: string,
   lat: number,
-  lng: number
+  lng: number,
+  address: string,
+  phone: string,
+  hours: string,
+  facebook?: string,
+  whatsapp?: string
 }

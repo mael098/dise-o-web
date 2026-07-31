@@ -7,6 +7,8 @@ import Nav from './component/Nav'
 import Showcase from './component/Showcase';
 import Stats from './component/Stats';
 import { buildWhatsAppUrl, DEFAULT_WA_MESSAGE } from './lib/brand';
+import { BranchProvider } from './lib/BranchProvider';
+import { useBranch } from './lib/branch-context';
 import Gallery from './component/Gallery';
 import Benefits from './component/Benefits';
 import Testimonials from './component/Testimonials';
@@ -16,8 +18,10 @@ import Footer from './component/Footer';
 import OrderBar from './component/OrderBar';
 // import Dialog from './component/ui/Dialog';
 
-function App() {
-   const [selectedProducts, setSelectedProducts] = useState<Set<string>>(new Set())
+function AppContent() {
+  const { branch } = useBranch()
+  const [selectedProducts, setSelectedProducts] = useState<Set<string>>(new Set())
+  const phone = branch.whatsapp ?? ''
 
   const toggleProduct = (productName: string) => {
     setSelectedProducts((prev) => {
@@ -36,9 +40,10 @@ function App() {
   const whatsappUrl =
     selectedProducts.size > 0
       ? buildWhatsAppUrl(
+          phone,
           `Hola, me interesa hacer un pedido de: ${Array.from(selectedProducts).join(', ')}`,
         )
-      : buildWhatsAppUrl(DEFAULT_WA_MESSAGE)
+      : buildWhatsAppUrl(phone, DEFAULT_WA_MESSAGE)
 
 
   return (
@@ -65,6 +70,14 @@ function App() {
       />
       {/* <Dialog/> */}
     </>
+  )
+}
+
+function App() {
+  return (
+    <BranchProvider>
+      <AppContent />
+    </BranchProvider>
   )
 }
 

@@ -2,31 +2,34 @@ import { motion } from 'framer-motion'
 import { fadeUp, stagger } from '../lib/motion'
 import { SectionHeading } from './ui/Primitives'
 import { LeafIcon, SparkleIcon, TruckIcon, HeartIcon } from './icons'
-
-const benefits = [
-  {
-    icon: LeafIcon,
-    title: 'Ingredientes frescos',
-    copy: 'Seleccionamos materia prima de primera calidad para un sabor genuino en cada bocado.',
-  },
-  {
-    icon: SparkleIcon,
-    title: 'Diseños personalizados',
-    copy: 'Creamos pasteles a medida para cumpleaños, bodas y celebraciones especiales.',
-  },
-  {
-    icon: TruckIcon,
-    title: 'Entrega coordinada',
-    copy: 'Entregas puntuales dentro de Altamira y alrededores para que todo salga perfecto.',
-  },
-  {
-    icon: HeartIcon,
-    title: 'Atención personalizada',
-    copy: 'Te acompañamos en cada detalle, desde la idea hasta el momento de soplar las velas.',
-  },
-]
+import { useBranch } from '../lib/branch-context'
 
 export default function Benefits() {
+  const { branch } = useBranch()
+
+  const benefits = [
+    {
+      icon: LeafIcon,
+      title: 'Ingredientes frescos',
+      copy: 'Seleccionamos materia prima de primera calidad para un sabor genuino en cada bocado.',
+    },
+    {
+      icon: SparkleIcon,
+      title: 'Diseños personalizados',
+      copy: 'Creamos pasteles a medida para cumpleaños, bodas y celebraciones especiales.',
+    },
+    {
+      icon: TruckIcon,
+      title: 'Entrega coordinada',
+      copy: `Entregas puntuales dentro de ${branch.name} y alrededores para que todo salga perfecto.`,
+    },
+    {
+      icon: HeartIcon,
+      title: 'Atención personalizada',
+      copy: 'Te acompañamos en cada detalle, desde la idea hasta el momento de soplar las velas.',
+    },
+  ]
+
   return (
     <section id="nosotros" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">

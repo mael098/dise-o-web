@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { cakes } from '../data/cakes'
 import { resolveImage } from '../lib/images'
 import { buildWhatsAppUrl } from '../lib/brand'
+import { useBranch } from '../lib/branch-context'
 import { SectionHeading, Button } from './ui/Primitives'
 import { ArrowRight } from './icons'
 
@@ -9,6 +10,8 @@ const featured = cakes.slice(0, 4)
 const ease = [0.22, 1, 0.36, 1] as const
 
 export default function Showcase() {
+  const { branch } = useBranch()
+  const phone = branch.whatsapp ?? ''
   return (
     <section id="destacados" className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
@@ -65,7 +68,7 @@ export default function Showcase() {
                   <div className="mt-6 flex items-center gap-5">
                     <span className="font-serif text-3xl text-primary">{cake.price}</span>
                     <Button
-                      href={buildWhatsAppUrl(`Hola D’PER, me interesa el ${cake.name}.`)}
+                      href={buildWhatsAppUrl(phone, `Hola D’PER, me interesa el ${cake.name}.`)}
                       variant="outline"
                       external
                     >

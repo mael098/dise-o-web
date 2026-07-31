@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { gallery2 } from '../lib/images'
 import { buildWhatsAppUrl, DEFAULT_WA_MESSAGE } from '../lib/brand'
+import { useBranch } from '../lib/branch-context'
 import { Button } from './ui/Primitives'
 import { WhatsAppIcon } from './icons'
 
@@ -8,6 +9,7 @@ const ease = [0.22, 1, 0.36, 1] as const
 const bg = gallery2[10] ?? gallery2[0]
 
 export default function FinalCTA() {
+  const { branch } = useBranch()
   return (
     <section id="pedido" className="px-3 pb-20 sm:px-6 sm:pb-28">
       <motion.div
@@ -45,7 +47,7 @@ export default function FinalCTA() {
           </p>
           <div className="mt-9 flex justify-center">
             <Button
-              href={buildWhatsAppUrl(DEFAULT_WA_MESSAGE)}
+              href={buildWhatsAppUrl(branch.whatsapp ?? '', DEFAULT_WA_MESSAGE)}
               variant="primary"
               external
               className="bg-accent px-8 py-4 text-base text-accent-foreground hover:bg-accent"

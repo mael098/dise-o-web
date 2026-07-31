@@ -1,5 +1,6 @@
 import { logo } from '../lib/images'
 import { BRAND, buildWhatsAppUrl, DEFAULT_WA_MESSAGE } from '../lib/brand'
+import { useBranch } from '../lib/branch-context'
 import { InstagramIcon, FacebookIcon, WhatsAppIcon, MapPinIcon, ClockIcon } from './icons'
 
 const nav = [
@@ -12,6 +13,9 @@ const nav = [
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const { branch } = useBranch()
+  const phone = branch.whatsapp ?? ''
+  const waUrl = buildWhatsAppUrl(phone, DEFAULT_WA_MESSAGE)
   return (
     <footer className="border-t border-border bg-ivory">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6">
@@ -39,11 +43,11 @@ export default function Footer() {
             <div className="mt-5 flex gap-3">
               {[
                 { Icon: InstagramIcon, label: 'Instagram', href: 'https://instagram.com' },
-                { Icon: FacebookIcon, label: 'Facebook', href: 'https://facebook.com' },
+                { Icon: FacebookIcon, label: 'Facebook', href: branch.facebook ?? 'https://facebook.com' },
                 {
                   Icon: WhatsAppIcon,
                   label: 'WhatsApp',
-                  href: buildWhatsAppUrl(DEFAULT_WA_MESSAGE),
+                  href: waUrl,
                 },
               ].map(({ Icon, label, href }) => (
                 <a
@@ -81,21 +85,21 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-muted">
               <li className="flex items-start gap-2.5">
                 <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                Zona Centro, Altamira, Tamaulipas
+                {branch.address}
               </li>
               <li className="flex items-start gap-2.5">
                 <ClockIcon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                Lun a Sáb · 9:00 – 20:00
+                {branch.hours}
               </li>
               <li className="flex items-start gap-2.5">
                 <WhatsAppIcon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                 <a
-                  href={buildWhatsAppUrl(DEFAULT_WA_MESSAGE)}
+                  href={waUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="transition-colors hover:text-primary"
                 >
-                  +52 181 4635 6315
+                  {branch.phone}
                 </a>
               </li>
             </ul>
@@ -106,7 +110,7 @@ export default function Footer() {
           <p className="text-xs text-muted">
             © {year} {BRAND.name} Pastelería. Todos los derechos reservados.
           </p>
-          <p className="text-xs text-muted">Hecho con dedicación artesanal en Altamira.</p>
+          <p className="text-xs text-muted">Hecho con dedicación artesanal en {branch.name}.</p>
         </div>
       </div>
     </footer>

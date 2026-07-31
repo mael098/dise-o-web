@@ -101,6 +101,14 @@ export function FacebookIcon(props: IconProps) {
   )
 }
 
+export function ChevronDownIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  )
+}
+
 export function MapPinIcon(props: IconProps) {
   return (
     <svg {...base} {...props}>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { gallery1, gallery2 } from '../lib/images'
 import { BRAND, buildWhatsAppUrl, DEFAULT_WA_MESSAGE } from '../lib/brand'
+import { useBranch } from '../lib/branch-context'
 import { Button } from './ui/Primitives'
 import { ArrowRight, StarIcon, WhatsAppIcon } from './icons'
 
@@ -11,7 +12,8 @@ const heroTertiary = gallery2[2] ?? gallery1[2]
 const ease = [0.22, 1, 0.36, 1] as const
 
 export default function Hero() {
-  const waUrl = buildWhatsAppUrl(DEFAULT_WA_MESSAGE)
+  const { branch } = useBranch()
+  const waUrl = buildWhatsAppUrl(branch.whatsapp ?? '', DEFAULT_WA_MESSAGE)
 
   return (
     <section id="inicio" className="bg-grain relative overflow-hidden pt-28 sm:pt-32">
@@ -25,7 +27,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-ivory/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary/80 backdrop-blur"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            {BRAND.location}
+            {branch.name}
           </motion.span>
 
           <motion.h1
